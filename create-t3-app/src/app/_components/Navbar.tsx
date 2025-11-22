@@ -8,6 +8,8 @@ const navLinks = [
   { name: "Salesperson", href: "/salesperson" },
   { name: "Companies", href: "/companies" },
   { name: "Sign Up", href: "/signup" },
+  { name: "Contact (Student)", href: "/contact/student" },
+  { name: "Contact (Tutor)", href: "/contact/tutor" },
 ];
 
 const Navbar = () => {
