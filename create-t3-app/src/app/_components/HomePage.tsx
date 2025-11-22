@@ -31,7 +31,7 @@ const ForStudentsSection = () => (
 
 const HomePage = () => {
   return (
-    <main className="flex-1 flex flex-col gap-0">
+    <main className="flex-1 flex flex-col gap-0 bg-[#F5F8F6]">
       <HeroSection />
       <ValueProposition />
       <ForTutorsSection />

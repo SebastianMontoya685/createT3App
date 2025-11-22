@@ -1,10 +1,3 @@
-import NextAuth from "next-auth";
-import { cache } from "react";
+// src/server/auth/index.ts
 
-import { authConfig } from "./config";
-
-const { auth: uncachedAuth, handlers, signIn, signOut } = NextAuth(authConfig);
-
-const auth = cache(uncachedAuth);
-
-export { auth, handlers, signIn, signOut };
+// Auth configuration, adapters, and helpers will go here.
