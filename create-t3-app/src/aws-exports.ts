@@ -3,15 +3,20 @@
 //
 const awsExports = {
   Auth: {
-    region: "us-east-1", // placeholder for dev; update using terraform outputs
-    userPoolId: "us-east-1_dummyid", // placeholder
-    userPoolWebClientId: "dummyclientid", // placeholder
-    oauth: {
-      domain: "dummy-domain.auth.us-east-1.amazoncognito.com",
-      scope: ['email', 'openid', 'profile'],
-      redirectSignIn: "http://localhost:3000/",
-      redirectSignOut: "http://localhost:3000/",
-      responseType: 'code',
+    Cognito: {
+      userPoolId: "us-east-1_Srdpj1MYh",
+      userPoolClientId: "8qi9rskr891mgett2kkalv088",
+      loginWith: {
+        oauth: {
+          domain: "my-tutoring-center-demo.auth.us-east-1.amazoncognito.com",
+          scopes: ["email", "openid", "profile"],
+          redirectSignIn: ["http://localhost:3000/"],
+          redirectSignOut: ["http://localhost:3000/"],
+          responseType: "code" as const,
+        },
+        username: "true",
+        email: "true",
+      },
     },
   },
 };

@@ -61,9 +61,13 @@ model User {
     email         String?   @unique
     emailVerified DateTime?
     image         String?
+    cognitoUserId String?   @unique // AWS Cognito User Pool sub/ID
     accounts      Account[]
     sessions      Session[]
     posts         Post[]
+    
+    @@index([cognitoUserId])
+    @@index([email])
 }
 
 model VerificationToken {

@@ -1,0 +1,16 @@
+{
+  "version": "1",
+  "region": "us-east-1",
+  "userPoolId": "example-pool-id",
+  "userName": "exampleuser",
+  "triggerSource": "PostConfirmation_ConfirmSignUp",
+  "request": {
+    "userAttributes": {
+      "sub": "mock-cognito-id-001",
+      "email": "mocked.user@example.com",
+      "email_verified": "true",
+      "name": "Mock User"
+    }
+  },
+  "response": {}
+}
