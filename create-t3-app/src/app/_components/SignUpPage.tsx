@@ -46,7 +46,10 @@ const SignUpPage = () => {
       <div className="flex-1 w-full flex flex-col justify-center items-center mt-10">
         <h1 className="mb-8 text-2xl md:text-3xl font-medium text-gray-900 text-center">Get started</h1>
         <div className="w-full max-w-md">
-          <Authenticator signUpAttributes={['email']}>
+          <Authenticator 
+            signUpAttributes={['email']}
+            hideSignUp={false}
+          >
             {({ signOut, user }) => {
               // Sync user to backend when authenticated
               useEffect(() => {

@@ -118,6 +118,8 @@ resource "aws_lambda_permission" "cognito_post_confirmation_permission" {
 resource "random_password" "db_password" {
   length  = 16
   special = true
+  # Exclude characters that RDS doesn't allow: '/', '@', '"', ' '
+  override_special = "!#$%&*()-_=+[]{}<>:?"
 }
 
 # Store password in AWS Secrets Manager (optional but recommended)
@@ -187,7 +189,7 @@ data "aws_subnets" "default" {
 resource "aws_db_instance" "main" {
   identifier             = "${var.user_pool_name}-db"
   engine                 = "postgres"
-  engine_version         = "15.5"  # Use available version (or remove to use default)
+  #engine_version         = "15.5"  # Use available version (or remove to use default)
   instance_class         = var.db_instance_class
   allocated_storage      = 20
   max_allocated_storage  = 100
