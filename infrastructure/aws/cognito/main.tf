@@ -78,7 +78,8 @@ resource "aws_iam_role_policy_attachment" "lambda_basic" {
 }
 
 resource "aws_lambda_layer_version" "prisma_client" {
-  filename            = "prisma-layer.zip"
+  s3_bucket           = var.lambda_artifact_s3_bucket
+  s3_key              = "prisma-layer.zip"
   layer_name          = "prisma-client-layer"
   compatible_runtimes = ["nodejs20.x"]
 }
